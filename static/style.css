@@ -50,3 +50,20 @@ html {
 .navbar-item {
     color: #ffffff;
 }
+
+.fa-stamp {
+    color: #01b47d;
+    font-size: 9rem;
+}
+
+.fa-twitter-square,
+.fa-github-square,
+.fa-linkedin {
+    color: #01b47d;
+    font-size: 2rem;
+}
+
+h2.dg {
+    color: #29333d;
+    font-weight: 500;
+}
