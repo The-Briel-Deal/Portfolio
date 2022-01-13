@@ -27,6 +27,7 @@ html {
 
 .section2 {
     background-color: #ffffff;
+    color: #29333d;
 }
 
 #technologies {
@@ -40,4 +41,12 @@ html {
 .fas {
     font-size: 5rem;
     padding-bottom: 2rem;
+}
+
+.navbar-menu {
+    background-color: #29333d !important;
+}
+
+.navbar-item {
+    color: #ffffff;
 }
