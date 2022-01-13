@@ -1,0 +1,43 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+html {
+    background-color: #29333d;
+}
+
+.navbar.is-dark {
+    background-color: #29333d;
+}
+
+.title {
+    color: #01b47d;
+}
+
+.subtitle,
+.subtitle strong {
+    color: #ffffff;
+}
+
+.button.is-primary {
+    background-color: #01b47d;
+}
+
+#avatar_of_me {
+    margin: 2rem 0;
+    max-width: 20%;
+}
+
+.section2 {
+    background-color: #ffffff;
+}
+
+#technologies {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #29333d !important;
+    font-weight: 600;
+}
+
+.fab,
+.fas {
+    font-size: 5rem;
+    padding-bottom: 2rem;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Briel-Deal/Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Briel-Deal/Portfolio/issues"
+  },
+  "homepage": "https://github.com/The-Briel-Deal/Portfolio#readme",
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
