@@ -4,6 +4,6 @@ const port = 3000
 
 app.use(express.static('static'));
 
-app.listen(port, "192.168.0.8", () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Example app listening at http://192.168.0.8:${port}`)
 })
