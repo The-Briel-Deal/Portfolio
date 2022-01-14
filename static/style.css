@@ -51,7 +51,8 @@ html {
     color: #ffffff;
 }
 
-.fa-stamp {
+.fa-stamp,
+.fa-code-branch {
     color: #01b47d;
     font-size: 9rem;
 }
@@ -63,7 +64,7 @@ html {
     font-size: 2rem;
 }
 
-h2.dg {
+.dg {
     color: #29333d;
     font-weight: 500;
 }
