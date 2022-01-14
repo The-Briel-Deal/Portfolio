@@ -20,6 +20,6 @@ app.get('/projects', function(req, res) {
     res.sendFile(__dirname + "/static/projects.html")
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3000, "192.168.0.8", () => {
     console.log(`Example app listening at http://192.168.0.8:${port}`)
 })
