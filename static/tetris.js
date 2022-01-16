@@ -6,85 +6,85 @@ let createBoard = () => {
         };
         tetrisBoard.append(`<br>`)
     };
-
-    var x = 0;
-    var y = 10;
-    var x_p = 0;
-    var y_p = 0;
     $("html").keydown(function (event) {
         changeBlockPos(event.key);
     });
 
-    full_block = [{
-        x: 6,
-        y: 4,
-        x_p: 0,
-        y_p: 0
-    }, {
-        x: 5,
-        y: 4,
-        x_p: 0,
-        y_p: 0
-    }, {
-        x: 4,
-        y: 4,
-        x_p: 0,
-        y_p: 0
-    }, {
-        x: 4,
-        y: 3,
-        x_p: 0,
-        y_p: 0
-    }]
-    // for(i=0; i<full_block.length; i++){
-    //     console.log(`${i} x: ${full_block[i].x}`);
-    //     console.log(`${i} y: ${full_block[i].y}`);
-    // }
+    let block_tl = [13, 0];
+
+    full_block = [
+        [0, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0]
+    ]
 
     function refresh() {
-        for (i = 0; i < full_block.length; i++) {
-            $(`#${full_block[i].x_p}_${full_block[i].y_p}`).removeClass("tetris_filled");
+        $(".tetris_filled").removeClass("tetris_filled");
+        for(y = 0; y < 3; y++){
+            for(x = 0; x < 3; x++){
+                if(full_block[y][x]){
+                    let y_pos = block_tl[1] + y;
+                    let x_pos = block_tl[0] + x;
+                    $(`#${y_pos}_${x_pos}`).addClass("tetris_filled");
+                    console.log(`#${y_pos}_${x_pos}`)
+                }
+            }
         }
-        for (i = 0; i < full_block.length; i++) {
-            $(`#${full_block[i].x}_${full_block[i].y}`).addClass("tetris_filled");
-            full_block[i].x_p = full_block[i].x;
-            full_block[i].y_p = full_block[i].y;
-        }
-
     }
 
     function changeBlockPos(r_l) {
-        let g_y = 0; //Greatest Y
-        let m_y = 29; //Minimum Y
-        for (i = 0; i < full_block.length; i++){
-            if(full_block[i].y > g_y){
-                g_y = full_block[i].y
-            }
-            if(m_y > full_block[i].y){
-                m_y = full_block[i].y
-            }
-        }
+        let x_most = 0;
             switch (r_l) {
                 case "ArrowRight":
-                    if (g_y < 29) {
-                        for (i = 0; i < full_block.length; i++) {
-                            full_block[i].y++;
+                    for(let y = 0; y < full_block.length; y++){
+                        for(let x = 0; x < full_block[y].length; x++){
+                            if (x > x_most){
+                                x_most = x;
+                            }
                         }
                     }
-                    refresh();
+                    if((block_tl[0] + x_most) <= 29){
+                        block_tl[0]++;
+                        refresh();
+                    }
                     break;
                 case "ArrowLeft":
-                    if (m_y > 0){
-                        for (i = 0; i < full_block.length; i++) {
-                            full_block[i].y--;
+                    for(let y = 0; y < full_block.length; y++){
+                        for(let x = 0; x < full_block[y].length; x++){
+                            if (x > x_most){
+                                x_most = x;
+                            }
                         }
                     }
-                    refresh();
+                    if((block_tl[0] + 2 - x_most) > 0){
+                        block_tl[0]--;
+                        refresh();
+                    }
                     break;
                 case "ArrowDown":
-                    for (i = 0; i < full_block.length; i++) {
-                        full_block[i].x++;
+                    for(let lowest_point = 0; lowest_point < full_block.length; lowest_point++){
+                        if(full_block[lowest_point].includes(1)){
+                            var low_point = lowest_point;
+                        }
                     }
+                    console.log(block_tl[1] + low_point)
+                    if((block_tl[1] + low_point) < 39){
+                    block_tl[1]++;
+                    refresh();
+                    }
+                    break;
+                case "r":
+                    let new_block = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+                    new_block[0][2] = full_block[0][0];
+                    new_block[1][2] = full_block[0][1];
+                    new_block[2][2] = full_block[0][2];
+                    new_block[2][1] = full_block[1][2];
+                    new_block[2][0] = full_block[2][2];
+                    new_block[1][0] = full_block[2][1];
+                    new_block[0][0] = full_block[2][0];
+                    new_block[0][1] = full_block[1][0];
+                    new_block[1][1] = full_block[1][1];
+                    full_block = new_block;
                     refresh();
                     break;
                 default:
@@ -92,10 +92,15 @@ let createBoard = () => {
             };
     }
     setInterval(() => {
-        for (i = 0; i < full_block.length; i++) {
-            full_block[i].x++;
+        for(let lowest_point = 0; lowest_point < full_block.length; lowest_point++){
+            if(full_block[lowest_point].includes(1)){
+                var low_point = lowest_point;
+            }
         }
-        refresh();
+        if((block_tl[1] + low_point) < 39){
+            block_tl[1]++;
+        }
+            refresh();
     }, 1000);
 
 };
