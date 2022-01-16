@@ -54,7 +54,9 @@ html {
 }
 
 .fa-stamp,
-.fa-code-branch {
+.fa-code-branch,
+.fa-briefcase,
+.fa-id-card {
     color: #01b47d;
     font-size: 9rem;
 }
