@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 html {
     background-color: #29333d;
@@ -51,6 +52,16 @@ html {
 
 .navbar-item {
     color: #ffffff;
+}
+
+#tetris_title {
+    font-family: 'Press Start 2P', cursive;
+    padding: 1.5rem;
+}
+
+.API_title {
+    padding: 1.5rem;
+    font-weight: 900;
 }
 
 .fa-stamp,
