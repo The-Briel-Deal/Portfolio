@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 html {
-    background-color: #29333d;
+    background-color: #ffffff;
 }
 
 .navbar.is-dark {
@@ -86,6 +86,10 @@ html {
 
 .social_icon {
     margin: 2%;
+}
+
+.section1 {
+    background-color:#29333d;
 }
 
 #tetris {
