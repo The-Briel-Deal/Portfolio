@@ -42,6 +42,6 @@ app.post("/weather", (req, res) => {
     });
 })
 
-app.listen(process.env.PORT || 3000, "192.168.0.7", () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Example app listening at ${port}`)
 })
